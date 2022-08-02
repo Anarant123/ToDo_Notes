@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_Notes.Views.ExerciseAddingPage"
+             Title="Задача">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="DELETE"
+                     Clicked="OnDeleteExercise_Clicked"/>
+        <ToolbarItem Text="SAVE"
+                     Clicked="OnSaveExercise_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="Задача"/>
+                <Editor Placeholder="Введите задачу"
+                        Text="{Binding THeader}"/>
+                <Label Text="Описание"/>
+                <Editor Placeholder="Введите описание если это необходимо"
+                        Text="{Binding Description}"
+                        AutoSize="TextChanges"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

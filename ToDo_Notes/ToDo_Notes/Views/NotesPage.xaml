@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDo_Notes.Views.NotesPage"
+             Title="Записки">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="add.png"
+                     Clicked="AddButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <CollectionView x:Name="collViews"
+                    Margin="10"
+                    SelectionMode="Single"
+                    SelectionChanged="On_SelectionChanged">
+        <CollectionView.ItemsLayout>
+            <LinearItemsLayout Orientation="Vertical"
+                               ItemSpacing="10"/>
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame CornerRadius="15"
+                       Padding="0"
+                       HasShadow="False">
+                    <StackLayout BackgroundColor="AliceBlue" Padding="5">
+                        <Label Text="{Binding Name}"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+                        <Label Text="{Binding Text}"
+                           FontSize="Medium"
+                           TextColor="Black"
+                           MaxLines="5"/>
+                        <Label Text="{Binding Date}"
+                           FontSize="Small"
+                           TextColor="#808080"
+                           HorizontalTextAlignment="End"/>
+                    </StackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>
